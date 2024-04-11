@@ -7,8 +7,12 @@ Please see the [Getting Started Guide](https://github.com/OfficeDev/ews-java-api
 
 
 **Project structure:**
-
 - fork from [ews-java-api](https://github.com/OfficeDev/ews-java-api)
+
+**Notice:**
+- If you are not using the company email on github, you have to pay attention to the following
+- You can use eclipse to commit with your company email/name
+- You have to push with commandline, because there will be a promt to login in github, this feature is lacking in eclipse
 
 **Build:**
 - To create a new version of the ews-java-api.jar, first change the version number in `gradle.properties`. At the beginning there must always be **2.1.***
