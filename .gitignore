@@ -6,13 +6,9 @@
 *.ear
 /target
 
-# Eclipse project files
-.settings
-.classpath
-.project
-
 # IntelliJ
 # User-specific stuff:
+.idea
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/findbugs-idea.xml
@@ -21,9 +17,13 @@
 .idea/shelf
 *.iws
 *.ipr
+*.iml
 # Sensitive or high-churn files:
 .idea/dataSources.ids
 .idea/dataSources.xml
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
+/bin/
+/.gradle/
+/build/
