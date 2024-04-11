@@ -1,61 +1,21 @@
-[![Build Status](https://travis-ci.org/OfficeDev/ews-java-api.svg)](https://travis-ci.org/OfficeDev/ews-java-api) [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/OfficeDev/ews-java-api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 # EWS JAVA API
 
-Please see the [Getting Started Guide](https://github.com/OfficeDev/ews-java-api/wiki/Getting-Started-Guide) on our wiki for an introduction to this library.
+The Exchange Web Services (EWS) Java API provides a managed interface for developing Java applications that use EWS.
+By using the EWS Java API, you can access almost all the information stored in an Office 365, Exchange Online, or Exchange Server mailbox. However, this API is in sustaining mode, the recommended access pattern for Office 365 and Exchange online data is [Microsoft Graph](https://graph.microsoft.com)
 
-## Using the library
-Prebuilt JARs are available in the Maven Central repository, which are easy to use with your project. Note that currently, no stable version is available yet, only snapshots in the snapshots repository.
+Please see the [Getting Started Guide](https://github.com/OfficeDev/ews-java-api/wiki/Getting-Started-Guide) on the official wiki for an introduction to this library.
 
-### Maven
-If you want to use a snapshot build, add the Maven Central snapshots repository to your project's `pom.xml`. If you want to use a stable build (not available yet), you should skip this step.
-```xml
-<project>
-  <repositories>
-    <repository>
-      <id>sonatype-snapshots</id>
-      <name>Sonatype OSS Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-</project>
-```
 
-And finally, add the dependency to your project's `pom.xml`.
-```xml
-<project>
-  <dependencies>
-    <dependency>
-      <groupId>com.microsoft.ews-java-api</groupId>
-      <artifactId>ews-java-api</artifactId>
-      <version>2.0-SNAPSHOT</version>
-    </dependency>
-  </dependencies>
-</project>
-```
+**Project structure:**
+- fork from [ews-java-api](https://github.com/OfficeDev/ews-java-api)
 
-### Gradle
-If you want to use a snapshot build, add the Maven Central snapshots repository to your project's `build.gradle`. If you want to use a stable build (not available yet), you should skip this step.
-```groovy
-repositories {
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots/'
-    }
-}
-```
+**Notice:**
+- If you are not using the company email on github, you have to pay attention to the following
+- You can use eclipse to commit with your company email/name
+- You have to push with commandline, because there will be a promt to login in github, this feature is lacking in eclipse
 
-And finally, add the dependency to your project's `build.gradle`.
-```groovy
-dependencies {
-    compile 'com.microsoft.ews-java-api:ews-java-api:2.0-SNAPSHOT'
-}
-```
-
-### Building from source
-To build a JAR from the source yourself, please see [this page](https://github.com/OfficeDev/ews-java-api/wiki/Building-EWS-JAVA-API).
+**Build:**
+- To create a new version of the ews-java-api.jar, first change the version number in `gradle.properties`. At the beginning there must always be **2.1.***
+- Ideally, check that all tests have been passed. To this call `.\gradlew build`
+- call `.\gradlew publish -Plocalrepo` to create a new version to the local Maven Repository build/maven
+- call `.\gradlew publish` to upload the new version to the nexus
