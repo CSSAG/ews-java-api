@@ -1033,9 +1033,19 @@ public class EwsXmlReader {
    * @return boolean
    * @throws XMLStreamException the XML stream exception
    */
-  public boolean isEmptyElement() throws XMLStreamException {
-    boolean isPresentStartElement = this.presentEvent.isStartElement();
-    boolean isNextEndElement = this.xmlReader.peek().isEndElement();
+  public boolean isEmptyElement() {
+	boolean isPresentStartElement = false;
+	boolean isNextEndElement = false;
+	try {
+		isPresentStartElement = presentEvent.isStartElement();
+	} catch (Exception e) {
+		// Exception unterdruecken
+	}
+	try {
+		isNextEndElement = xmlReader.peek().isEndElement();
+	} catch (Exception e) {
+		// Exception unterdruecken
+	}
 	return isPresentStartElement && isNextEndElement;
   }
 
