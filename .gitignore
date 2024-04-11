@@ -6,11 +6,6 @@
 *.ear
 /target
 
-# Eclipse project files
-.settings
-.classpath
-.project
-
 # IntelliJ
 # User-specific stuff:
 .idea
