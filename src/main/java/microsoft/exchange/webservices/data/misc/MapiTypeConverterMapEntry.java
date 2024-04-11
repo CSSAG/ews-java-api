@@ -61,11 +61,11 @@ public class MapiTypeConverterMapEntry {
 
           map.put(Boolean.class, false);
           map.put(Byte[].class, null);
-          map.put(Short.class, new Short((short) 0));
+          map.put(Short.class,  Short.valueOf((short) 0));
           map.put(Integer.class, 0);
-          map.put(Long.class, new Long(0L));
-          map.put(Float.class, new Float(0.0));
-          map.put(Double.class, new Double(0.0D));
+          map.put(Long.class,  Long.valueOf(0L));
+          map.put(Float.class,  Float.valueOf((float)0.0));
+          map.put(Double.class, Double.valueOf(0.0D));
           SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
           try {
             map.put(Date.class, formatter.parse("0001-01-01 12:00:00"));
